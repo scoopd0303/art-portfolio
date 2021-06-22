@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th='http://www.thymeleaf.org/'>
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Scott McDonald</title>
+    <link rel="icon" th:href="@{/images/favicon/favicon.png}">
+    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Oswald&family=Raleway&display=swap" rel="stylesheet">
+
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header th:fragment="header">
+        <nav id="navbar">
+            <h1 class="font1">SELECTED ARTWORK</h1>
+            <h2 class="font0 subtitle0">by renowned doodle artist scott mcdonald</h2>
+            <h2 class="font0 subtitle1">by scott mcdonald</h2>
+        </nav>
+    </header>
+
+    <main th:fragment="doodleGallery">
+
+        <th:block th:each="doodle : ${doodles}">
+
+            <article>
+
+                <div class="gallery-item">
+                    <img class="art-image" th:src="@{${doodle.imagePath}}" th:alt="${doodle.altAttribute}"/>
+                </div>
+
+                <div class="image-caption">
+                    <h2 class="font1"><em th:text="${doodle.title}"></em></h2>
+                    <p class="font2" th:text="${doodle.description}"></p>
+                </div>
+
+            </article>
+
+        </th:block>
+    </main>
+
+    <main th:fragment="paintingGallery">
+
+        <th:block th:each="painting : ${paintings}">
+
+            <article>
+
+                <div class="gallery-item">
+                    <img class="art-image" th:src="@{${painting.imagePath}}" th:alt="${painting.altAttribute}"/>
+                </div>
+
+                <div class="image-caption">
+                    <h2 class="font1"><em th:text="${painting.title}"></em></h2>
+                    <p class="font2" th:text="${painting.description}"></p>
+                </div>
+
+            </article>
+
+        </th:block>
+    </main>
+
+
+</body>
+</html>

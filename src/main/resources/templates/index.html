@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns:th='http://www.thymeleaf.org/'>
+
+<head th:replace="fragments :: head"></head>
+
+<body>
+
+    <div class="page-container">
+
+        <header th:replace="fragments :: header"></header>
+
+        <main class="portals">
+            <article>
+                <a href="/doodles">
+                    <div class="gallery-item">
+                        <img class="art-image" th:src="@{/images/doodles/milk.png}" alt="doodles"/>
+                        <h1 class="font1 portal-text">
+                            DOODLES
+                        </h1>
+                    </div>
+                </a>
+
+            </article>
+
+            <article>
+                <a href="/paintings">
+                    <div class="gallery-item">
+                        <img class="art-image" th:src="@{/images/paintings/pokey.png}" alt="paintings"/>
+                        <h1 class="font1 portal-text">
+                            PAINTINGS
+                        </h1>
+                    </div>
+                </a>
+            </article>
+
+
+        </main>
+
+
+
+    </div>
+
+</body>
+</html>
