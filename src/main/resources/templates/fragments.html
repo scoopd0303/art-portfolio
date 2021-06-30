@@ -16,50 +16,29 @@
 
     <header th:fragment="header">
         <nav id="navbar">
-            <h1 class="font1">SELECTED ARTWORK</h1>
-            <h2 class="font0 subtitle0">by renowned doodle artist scott mcdonald</h2>
-            <h2 class="font0 subtitle1">by scott mcdonald</h2>
+            <h1 class="font1" th:text="${title}">SELECTED ARTWORK</h1>
         </nav>
     </header>
 
-    <main th:fragment="doodleGallery">
+    <main th:fragment="artGallery">
 
-        <th:block th:each="doodle : ${doodles}">
+        <th:block th:each="artwork : ${artworks}">
 
             <article>
 
                 <div class="gallery-item">
-                    <img class="art-image" th:src="@{${doodle.imagePath}}" th:alt="${doodle.altAttribute}"/>
+                    <img class="art-image" th:src="@{${artwork.getImagePath()}}"/>
                 </div>
 
                 <div class="image-caption">
-                    <h2 class="font1"><em th:text="${doodle.title}"></em></h2>
-                    <p class="font2" th:text="${doodle.description}"></p>
+                    <h2 class="font1"><em th:text="${artwork.title}"></em></h2>
+                    <p class="font2" th:text="${artwork.description}"></p>
                 </div>
 
             </article>
 
         </th:block>
-    </main>
 
-    <main th:fragment="paintingGallery">
-
-        <th:block th:each="painting : ${paintings}">
-
-            <article>
-
-                <div class="gallery-item">
-                    <img class="art-image" th:src="@{${painting.imagePath}}" th:alt="${painting.altAttribute}"/>
-                </div>
-
-                <div class="image-caption">
-                    <h2 class="font1"><em th:text="${painting.title}"></em></h2>
-                    <p class="font2" th:text="${painting.description}"></p>
-                </div>
-
-            </article>
-
-        </th:block>
     </main>
 
 

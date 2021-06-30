@@ -9,32 +9,42 @@
 
         <header th:replace="fragments :: header"></header>
 
-        <main class="portals">
-            <article>
-                <a href="/doodles">
-                    <div class="gallery-item">
-                        <img class="art-image" th:src="@{/images/doodles/milk.png}" alt="doodles"/>
-                        <h1 class="font1 portal-text">
-                            DOODLES
-                        </h1>
-                    </div>
-                </a>
+        <main th:replace="fragments :: artGallery"></main>
 
-            </article>
+        <article>
 
-            <article>
-                <a href="/paintings">
-                    <div class="gallery-item">
-                        <img class="art-image" th:src="@{/images/paintings/pokey.png}" alt="paintings"/>
-                        <h1 class="font1 portal-text">
-                            PAINTINGS
-                        </h1>
-                    </div>
-                </a>
-            </article>
+            <div class="image-caption">
+                <h2 style="text-align:center;" class="font1"><a th:href="@{/add}"><em>+ New ArtWork</em></a></h2>
+            </div>
+
+        </article>
+
+<!--        <main class="portals">-->
+<!--            <article>-->
+<!--                <a href="/doodles">-->
+<!--                    <div class="gallery-item">-->
+<!--                        <img class="art-image" th:src="@{/images/doodles/milk.png}" alt="doodles"/>-->
+<!--                        <h1 class="font1 portal-text">-->
+<!--                            DOODLES-->
+<!--                        </h1>-->
+<!--                    </div>-->
+<!--                </a>-->
+
+<!--            </article>-->
+
+<!--            <article>-->
+<!--                <a href="/paintings">-->
+<!--                    <div class="gallery-item">-->
+<!--                        <img class="art-image" th:src="@{/images/paintings/pokey.png}" alt="paintings"/>-->
+<!--                        <h1 class="font1 portal-text">-->
+<!--                            PAINTINGS-->
+<!--                        </h1>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--            </article>-->
 
 
-        </main>
+<!--        </main>-->
 
 
 
