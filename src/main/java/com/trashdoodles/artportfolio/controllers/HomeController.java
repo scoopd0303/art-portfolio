@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -17,21 +18,6 @@ import java.util.List;
 
 @Controller
 public class HomeController {
-
-    private static List<Image> artworks = new ArrayList<>(Arrays.asList(
-            new Image("Duckie", "duckie.png", "illustration", "marker & pen on paper"),
-            new Image("Ghosties", "ghosties.png", "illustration", "marker & pen on paper"),
-            new Image("Definitely a Gerald", "definitely_a_gerald.png", "illustration", "marker & pen on paper"),
-            new Image("It's Just a Plant", "it's_just_a_plant.png", "illustration", "marker & pen on paper"),
-            new Image("Giraffe Astronaut", "giraffe_astronaut.png", "illustration", "marker & pen on paper"),
-            new Image("Grapes", "grapes.png", "illustration", "marker & pen on paper"),
-            new Image("Pokey", "pokey.png", "painting", "acrylic on canvas"),
-            new Image("Charles", "charles_bradley.png", "painting", "acrylic and charcoal on panel board"),
-            new Image("Molly", "molly.png", "painting", "acrylic and marker on canvas"),
-            new Image("A Salty Sea Dog", "salty_sea_dog.png", "painting", "acrylic and charcoal on canvas"),
-            new Image("Troll", "troll.png", "painting", "acrylic on canvas"),
-            new Image("Robot", "robot.png", "painting", "acrylic on canvas")
-    ));
 
     @Autowired
     private ImageRepository imageRepository;
