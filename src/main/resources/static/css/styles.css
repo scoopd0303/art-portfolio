@@ -128,6 +128,16 @@ body {
     margin: 0;
 }
 
+.artwork-checkbox-container {
+    display: flex;
+    flex-direction: row;
+} .artwork-checkbox {
+    justify-self: flex-start;
+    align-self: center;
+    height: 50px;
+    width: 50px;
+}
+
 @media all and (max-width: 500px) {
     article {
         width: 100%;

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th='http://www.thymeleaf.org/'>
+
+<head th:replace="fragments :: head"></head>
+
+<body>
+
+<div class="page-container">
+
+    <header th:replace="fragments :: header"></header>
+
+    <main th:replace="fragments :: artGallery"></main>
+
+    <article>
+
+        <div class="image-caption">
+            <h2 style="text-align:center;" class="font1"><a th:href="@{/gallery/add}"><em>+ New ArtWork</em></a></h2>
+        </div>
+
+    </article>
+
+</div>
+
+<script th:src="@{/script/index.js}"></script>
+
+</body>
+</html>
