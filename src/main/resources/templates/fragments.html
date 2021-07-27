@@ -27,6 +27,9 @@
                 </div>
 
                 <div class="image-caption">
+                    <div class="edit-image-link">
+                        <a th:href="@{/gallery/edit/} + ${artwork.id}">edit</a>
+                    </div>
                     <h2 class="font1"><em th:text="${artwork.title}"></em></h2>
                     <p class="font2" th:text="${artwork.description}"></p>
                 </div>

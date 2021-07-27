@@ -136,6 +136,17 @@ body {
     align-self: center;
     height: 50px;
     width: 50px;
+} .edit-image-link {
+    position: absolute;
+    display: flex;
+    align-self: flex-end;
+    margin: 10px 10px 0 0;
+    opacity: .3;
+} .edit-image-link a {
+    text-decoration: none;
+    color: black;
+} .edit-image-link:hover {
+    opacity: .7;
 }
 
 @media all and (max-width: 500px) {

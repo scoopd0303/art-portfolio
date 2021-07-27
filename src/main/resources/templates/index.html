@@ -9,19 +9,11 @@
 
         <header th:replace="fragments :: header"></header>
 
-        <main th:replace="fragments :: artGallery"></main>
-
-        <article>
-
-            <div class="image-caption">
-                <h2 style="text-align:center;" class="font1"><a th:href="@{/add}"><em>+ New ArtWork</em></a></h2>
-            </div>
-
-        </article>
+        <a href="/gallery">Art Gallery</a>
+        <a href="/box">What's in the Box?!</a>
 
     </div>
 
-    <script th:src="@{/script/index.js}"></script>
 
 </body>
 </html>

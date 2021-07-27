@@ -26,27 +26,8 @@ public class HomeController {
 
     @GetMapping
     public String index(Model model) {
-        model.addAttribute("title", "Selected Artworks");
-        model.addAttribute("artworks", imageRepository.findAll());
+        model.addAttribute("title", "Scott McDonald");
         return "index";
-    }
-
-    @GetMapping("add")
-    public String displayAddArtWorkForm(Model model) {
-        model.addAttribute("title", "Add New Artwork");
-        model.addAttribute(new Image());
-        model.addAttribute("artTypes", artTypes);
-        return "add";
-    }
-
-    @PostMapping("add")
-    public String processAddArtWorkForm(@ModelAttribute @Valid Image newImage, Errors errors, Model model) {
-        if (errors.hasErrors()) {
-            model.addAttribute("title", "Add New Artwork");
-            return "add";
-        }
-        imageRepository.save(newImage);
-        return "redirect:";
     }
 
 }

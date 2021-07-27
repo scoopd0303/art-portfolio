@@ -82,6 +82,7 @@ public class GalleryController {
         String title = "Edit Artwork " + imageToEdit.getTitle();
         model.addAttribute("title", title);
         model.addAttribute("artwork", imageToEdit);
+        model.addAttribute("artTypes", artTypes);
 
         return "gallery/edit";
     }

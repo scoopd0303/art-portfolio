@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th='http://www.thymeleaf.org/'>
+<head>
+    <meta charset="UTF-8">
+    <title>WHATSINTHEBOX</title>
+    <link rel="icon" th:href="@{/images/box/box-open.png}">
+    <link rel="stylesheet" th:href="@{/css/box/styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Oswald&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header th:replace="fragments :: header"></header>
+
+    <!-- divider -->
+    <div class="divider"></div>
+
+    <div class="section">
+        <div class="section-border">
+            <div class="box-container">
+                <div class="svg-container">
+                    <svg viewBox="0 0 527 527">
+                        <path id="box-path" fill="transparent" stroke="none" stroke-width="1" d="M123 123v279h280V123H123z"/>
+                    </svg>
+                </div>
+                <img class="box-image">
+                <div id="box"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- divider -->
+    <div class="divider"></div>
+
+    <script>
+        let artworks = '[[${artworks}]]'.replace("[", "").replace("]", "").replaceAll(" ", "").split(",");
+
+        console.log(artworks);
+    </script>
+    <script th:src="@{/script/box/index.js}"></script>
+
+</body>
+</html>
