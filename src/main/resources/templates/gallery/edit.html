@@ -12,21 +12,21 @@
 
         <div>
             <label>Title
-                <input type="text" name="title" th:field="${artwork.title}" th:value="${artwork.title}">
+                <input type="text" name="title" th:value="${artwork.title}" th:field="${artwork.title}">
             </label>
             <p style="color:red;" th:errors="${artwork.title}"></p>
         </div>
 
         <div>
             <label>File Name
-                <input type="text" name="fileName" th:field="${artwork.fileName}" th:value="${artwork.fileName}">
+                <input type="text" name="fileName" th:value="${artwork.fileName}" th:field="${artwork.fileName}">
             </label>
             <p style="color:red;" th:errors="${artwork.fileName}"></p>
         </div>
 
         <div>
             <label>Art Type
-                <select name="type" th:field="${artwork.artType}">
+                <select name="artType" th:field="${artwork.artType}">
                     <option th:each="type : ${artTypes}" th:value="${type}" th:text="${type}"></option>
                 </select>
             </label>
@@ -35,14 +35,15 @@
 
         <div>
             <label>Description
-                <input type="text" name="description" th:field="${artwork.description}" th:value="artwork" placeholder="optional">
+                <input type="text" name="description" th:field="${artwork.description}" th:value="${artwork.description}" placeholder="optional">
             </label>
             <!--            <p style="color:red;" th:errors="${image.description}"></p>-->
         </div>
 
         <div>
-            <input type="submit" value="Add">
+            <input type="submit" value="Edit">
         </div>
+        <input type="hidden" th:value="${artwork.id}" name="artworkId" th:field="${artwork.id}"/>
 
     </form>
 

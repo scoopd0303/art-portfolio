@@ -78,12 +78,36 @@ public class GalleryController {
     @GetMapping("edit/{artworkId}")
     public String displayEditArtworkForm(Model model, @PathVariable int artworkId) {
 
-        Image imageToEdit = imageRepository.findById(artworkId).get();
-        String title = "Edit Artwork " + imageToEdit.getTitle();
+        Image artwork = imageRepository.findById(artworkId).get();
+        String title = "Edit Artwork " + artwork.getTitle();
         model.addAttribute("title", title);
-        model.addAttribute("artwork", imageToEdit);
+        model.addAttribute("artwork", artwork);
         model.addAttribute("artTypes", artTypes);
 
         return "gallery/edit";
+    }
+
+    @PostMapping("edit")
+    public String processEditArtworkForm(@RequestParam(required = false) Integer artworkId, String title) {
+
+        if (artworkId != null) {
+            Image artwork = imageRepository.findById(artworkId).get();
+            String pageTitle = "Edit Artwork " + artwork.getTitle();
+
+//            if (errors.hasErrors()) {
+//                model.addAttribute("title", pageTitle);
+//                model.addAttribute("artwork", artwork);
+//                model.addAttribute("artTypes", artTypes);
+//                return "gallery/edit";
+//            }
+            artwork.setTitle(title);
+//            artwork.setFileName(filename);
+//            artwork.setDescription(description);
+//            artwork.setArtType(artType);
+            imageRepository.save(artwork);
+        }
+
+        return "redirect:/gallery";
+
     }
 }
