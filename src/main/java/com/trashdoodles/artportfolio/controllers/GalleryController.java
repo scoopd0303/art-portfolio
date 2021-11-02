@@ -88,26 +88,21 @@ public class GalleryController {
     }
 
     @PostMapping("edit")
-    public String processEditArtworkForm(@RequestParam(required = false) Integer artworkId, String title) {
+    public String processEditArtworkForm(@RequestParam Integer artworkId, String title, String fileName, String artType, String description) {
 
-        if (artworkId != null) {
-            Image artwork = imageRepository.findById(artworkId).get();
-            String pageTitle = "Edit Artwork " + artwork.getTitle();
+        Optional optArtwork = imageRepository.findById(artworkId);
+        if (optArtwork.isPresent()) {
+            Image artwork = (Image) optArtwork.get();
 
-//            if (errors.hasErrors()) {
-//                model.addAttribute("title", pageTitle);
-//                model.addAttribute("artwork", artwork);
-//                model.addAttribute("artTypes", artTypes);
-//                return "gallery/edit";
-//            }
             artwork.setTitle(title);
-//            artwork.setFileName(filename);
-//            artwork.setDescription(description);
-//            artwork.setArtType(artType);
+            artwork.setFileName(fileName);
+            artwork.setArtType(artType);
+            artwork.setDescription(description);
+
             imageRepository.save(artwork);
+            return "redirect:/gallery";
+        } else {
+            return "redirect:";
         }
-
-        return "redirect:/gallery";
-
     }
 }

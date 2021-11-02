@@ -10,9 +10,9 @@ public abstract class AbstractEntity {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
 
-    public int getId() { return id; }
+    public Integer getId() { return id; }
 
     @Override
     public boolean equals(Object o) {

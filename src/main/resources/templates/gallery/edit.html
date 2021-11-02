@@ -8,6 +8,12 @@
 
     <header th:replace="fragments :: header"></header>
 
+    <article>
+        <div class="gallery-item">
+            <img class="art-image" th:src="@{${artwork.getImagePath()}}"/>
+        </div>
+    </article>
+
     <form method="post" th:action="@{/gallery/edit}">
 
         <div>
@@ -43,7 +49,7 @@
         <div>
             <input type="submit" value="Edit">
         </div>
-        <input type="hidden" th:value="${artwork.id}" name="artworkId" th:field="${artwork.id}"/>
+        <input type="hidden" th:value="${artwork.id}" name="artworkId" />
 
     </form>
 
