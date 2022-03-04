@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns:th='http://www.thymeleaf.org/'>
+<head th:replace="fragments :: head"></head>
+
+<body>
+
+<div class="page-container">
+
+    <header th:replace="fragments :: header"></header>
+
+    <form method="post">
+        <th:block th:each="artwork : ${artworks}">
+
+            <div class="artwork-checkbox-container">
+
+                <input type="checkbox" name="artworkIds" th:value="${artwork.getId()}" class="artwork-checkbox">
+                <div class="gallery-item">
+                    <img class="art-image" th:src="@{${artwork.getImagePath()}}"/>
+                </div>
+
+
+            </div>
+
+        </th:block>
+
+        <div>
+            <input type="submit" value="Delete">
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>

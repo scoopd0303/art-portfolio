@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th='http://www.thymeleaf.org/'>
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Scott McDonald</title>
+    <link rel="icon" th:href="@{/images/favicon/favicon.png}">
+    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Oswald&family=Raleway&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header th:fragment="header">
+        <nav id="navbar">
+            <h1 class="font1" th:text="${title}">SELECTED ARTWORK</h1>
+        </nav>
+    </header>
+
+    <main th:fragment="artGallery">
+
+        <th:block th:each="artwork : ${artworks}">
+
+            <article>
+
+                <div class="gallery-item">
+                    <img class="art-image" th:src="@{${artwork.getImagePath()}}"/>
+                </div>
+
+                <div class="image-caption">
+                    <div class="edit-image-link">
+                        <a th:href="@{/gallery/edit/} + ${artwork.id}">edit</a>
+                    </div>
+                    <h2 class="font1"><em th:text="${artwork.title}"></em></h2>
+                    <p class="font2" th:text="${artwork.description}"></p>
+                </div>
+
+            </article>
+
+        </th:block>
+
+    </main>
+
+
+</body>
+</html>
